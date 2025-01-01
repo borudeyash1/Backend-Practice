@@ -69,11 +69,11 @@ findIndex, some, every, sort, reverse,etc */
 ////find function : using anonymous function to find a particular value only
 // var arr = [1 , 2 ,3 ,4];
 // var ans = arr.find(function(num){
-//     if(num === 2)return true;
+//     if(num === 9)return true;   //test case : num = 9 then it will return false(undefined in console)
 //     else return false;
-// })
-// console.log(ans);
-
+// })              
+// console.warn(ans);       //we can use console.warn() , console.log() , console.error() 
+//                         // to print the value in console
 
 
 
