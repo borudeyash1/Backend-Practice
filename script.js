@@ -18,10 +18,17 @@ findIndex, some, every, sort, reverse,etc */
 //   }
 //   console.log(add(5, 3));
 
+//-------------------ARRAYS-------------------//
+// //array : array is a collection of elements.
+//Tip -this array is not like array in c/c++/java/python.
+// It can store any type of data.
+//example:
+const arr =['yash', 1, true, 'harsh', 2, 'smit', 3];    //can use 'var' or 'let' or 'const'
+console.log(arr);          //return statement
 
 ////foreach function:
 ////logic : foreach function is used to iterate over an array.
-// const numbers = [1, 2, 3, 4, 5];
+// const numbers = [1, 2, 3, 4, 5];     //can use 'var' or 'let' or 'const'
 // numbers.forEach(function(n) {
 //   console.log(n);
 // });
@@ -49,7 +56,7 @@ findIndex, some, every, sort, reverse,etc */
 // console.log('even numbers are: ',even);
 
 // //way 2: using arrow function and directly returning the value
-// const numbers = [1, 2, 3, 4, 5];
+// const numbers = [1, 2, 3, 4, 5];                      //can use 'var' or 'let' or 'const'
 // const evenNumbers = numbers.filter(num => num % 2 === 0);
 // console.log('Even numbers are:', evenNumbers);
 
@@ -78,10 +85,25 @@ findIndex, some, every, sort, reverse,etc */
 
 ////indexOf function:
 ////logic : indexOf function is used to find the index of an element in an array.
-// const numbers = ['harsh','yash','smitraj','abhishek'];
+// const numbers = ['harsh','yash','smitraj','abhishek'];            //can use 'var' or 'let' or 'const'
 // const index = numbers.indexOf('smitraj');
 // console.log('smitraj found at index:', index);
 
+////reverse function:
+////logic : reverse function is used to reverse the order of elements in an array.
+// const numbers = [1, 2, 3, 4, 5];
+// const reversed = numbers.reverse();
+// console.log('Reversed numbers are:', reversed);
+
+//-------------------OBJECTS-------------------//
+// //object : object is a collection of key-value pairs.
+//EXAMPLE:
+// const person = {            //can use 'var' or 'let' or 'const'
+//         name: 'Harsh',
+//         age: 20,
+//         city: 'Delhi'
+//       };
+//   console.log(person);
 
 
 
