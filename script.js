@@ -76,6 +76,12 @@ findIndex, some, every, sort, reverse,etc */
 //                         // to print the value in console
 
 
+////indexOf function:
+////logic : indexOf function is used to find the index of an element in an array.
+// const numbers = ['harsh','yash','smitraj','abhishek'];
+// const index = numbers.indexOf('smitraj');
+// console.log('smitraj found at index:', index);
+
 
 
 
