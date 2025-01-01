@@ -23,8 +23,10 @@ findIndex, some, every, sort, reverse,etc */
 //Tip -this array is not like array in c/c++/java/python.
 // It can store any type of data.
 //example:
-const arr =['yash', 1, true, 'harsh', 2, 'smit', 3];    //can use 'var' or 'let' or 'const'
-console.log(arr);          //return statement
+// const arr =['yash', 1, true, 'harsh', 2, 'smit', 3];    //can use 'var' or 'let' or 'const'
+// console.log(arr);          //return statement
+
+
 
 ////foreach function:
 ////logic : foreach function is used to iterate over an array.
@@ -97,7 +99,8 @@ console.log(arr);          //return statement
 
 //-------------------OBJECTS-------------------//
 // //object : object is a collection of key-value pairs.
-//EXAMPLE:
+////Basically in javascript, functions are called objects.
+//EXAMPLE 1:
 // const person = {            //can use 'var' or 'let' or 'const'
 //         name: 'Harsh',
 //         age: 20,
@@ -105,8 +108,16 @@ console.log(arr);          //return statement
 //       };
 //   console.log(person);
 
+// //EXAMPLE 2:
+// function Person(name, age){}
+// console.log(Person);
 
-
+//Finding size of function/object: 
+//size of function is the number of arguments/parameters passed to the function and it takes.
+//size of object is the number of properties in the object.
+//example:
+function person(name, age, city){}
+  log(person);         //test case : got '3' as length in console by typing 'person.length'
 
 // // async js coding:
 // async function myFunction() {
