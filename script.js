@@ -66,9 +66,15 @@ findIndex, some, every, sort, reverse,etc */
 // const evenNumber = numbers.find(num => num % 2 === 0);
 // console.log('First even number is:', evenNumber);
 
-// const numbers = [1, 2, 3, 4, 5];
-// const evenNumber = numbers.find(num => num % 2 === 0);
-// console.log('First even number is:', evenNumber);
+////find function : using anonymous function to find a particular value only
+// var arr = [1 , 2 ,3 ,4];
+// var ans = arr.find(function(num){
+//     if(num === 2)return true;
+//     else return false;
+// })
+// console.log(ans);
+
+
 
 
 
