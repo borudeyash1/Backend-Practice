@@ -122,12 +122,33 @@ please try implementing following code one by one.*/
 //   log(person);         //test case : got '3' as length in console by typing 'person.length'
 
 
+//Synchronous code - line by line coding(simple)
+
+// // Asynchronous js coding:Jo bhi code async nature ka ho ,use side stack mein bhejo 
+//aur agle code ko run karo,jo sync nature ka ho
+//Jab  sync code chal jaein tab check karo ki async code complete hua ki nahi
+//agar complete hua to use main stack mein lao aur usko run karo 
 
 
 
-// // async js coding:
-// async function myFunction() {
+//EXAMPLE 1.
+// async function myFunction() {    //async function
 //     console.log('Hello ');
 //   }
 //   myFunction();
 
+////EXAMPLE 2.
+// async function myFunction() {    //async function
+// await console.log('Hello ');    //await is used to wait for the function to complete
+// }
+// myFunction();
+
+////example 3.
+async function myFunction() {    //async function
+    var blob = await fetch('https://randomuser.me/api/');   //fetch is used to fetch data from api
+    var ans = await blob.json();    //json is used to convert data to json and awiat is used to wait for the function to complete
+    console.log(ans);           //replace this with console.log(ans.results[0].name) to get the name of the person ans.results[0].name .Refresh the page to get a new person.
+    
+  }
+myFunction();
+////test case : {results:Array[1],info:object}
