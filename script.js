@@ -491,3 +491,36 @@ install: npm i nodemon --save-dev
 uninstall: npm uninstall nodemon
 
 */
+
+/* 
+---------NPM SCRIPTS---------------------*start and test are the only two default scripts
+OS will run 'npm start' and 'npm test' by default
+npm start   //start the server 
+npm test    //test the server
+---------OTHERS NEED run' BEFORE STARTING THE SERVER---------beacuse,these are custom scripts
+and problem can occur if we run them before starting the server or incorrectly run them.eg:npm chacha  //invalid command,not built yet
+npm run dev    // start the server in development mode
+npm run concurrency  //start the server in concurrent mode(means that multiple requests can be handled at the same time ;ike react + nodejs in MERN stack)
+npm run watch        //start the server in watch mode (means that the server will be restarted when the source code changes)
+npm run build//     //build the project
+npm run lint        //check if the code is linted(means that the code is clean and has no errors)
+npm run format      //format the code(means that the code is clean and has no errors)
+
+*/
+
+/*ACTIVITY:
+open package.json file
+in scripts section,add the following scripts:
+"start": "node server.js",
+chacha: "echo\"Chacha is here",
+
+now save it and open terminal 
+test cases:
+1.npm start:should start node server.js
+
+2.npm chacha:should print Chacha is herein the terminal
+but,it will return an error because chacha is an unknown command.
+Therefore,we have to use 'npm run chacha' instead of 'npm chacha'.
+Npw,> backend-practice@1.0.0 chacha
+    > echo"Chacha is here    //success
+*/
