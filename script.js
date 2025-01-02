@@ -144,11 +144,39 @@ please try implementing following code one by one.*/
 // myFunction();
 
 ////example 3.
-async function myFunction() {    //async function
-    var blob = await fetch('https://randomuser.me/api/');   //fetch is used to fetch data from api
-    var ans = await blob.json();    //json is used to convert data to json and awiat is used to wait for the function to complete
-    console.log(ans);           //replace this with console.log(ans.results[0].name) to get the name of the person ans.results[0].name .Refresh the page to get a new person.
+// async function myFunction() {    //async function
+//     var blob = await fetch('https://randomuser.me/api/');   //fetch is used to fetch data from api
+//     var ans = await blob.json();    //json is used to convert data to json and awiat is used to wait for the function to complete
+//     console.log(ans);           //replace this with console.log(ans.results[0].name) to get the name of the person ans.results[0].name .Refresh the page to get a new person.
     
-  }
-myFunction();
-////test case : {results:Array[1],info:object}
+//   }
+// myFunction();
+
+////We are done with the intro of Js.Let's learn about basics of Node.js
+
+//------------------------------Node.js----------------------------------------------//
+/*
+1.Node.js basics
+2.Introduction
+3.Instaliing Node.js and name
+4.Working with modules
+5.File system operations
+6.Understanding HTTP modules and API */
+
+/*Node.js:Not a programming language
+Node.js is a 'runtime environment' for JavaScript.
+It allows you to run JavaScript code outside of a web browser.
+It is used to build server-side applications and APIs.
+It is built on Chrome's V8 JavaScript engine.
+It is open-source and free to use.
+*/
+/*Because javascript doesn't have functionalities for backend development
+Ryan Dahl created Node.js-he designed it for the backend.
+Ryan Dehl modified code in Google Chrome  V8 engine (open source)to create Node.js.
+He tried to create server in Node.js-I have to code in js(becuase chrome's V8 engine is in c++).
+he use js wrapper to create server in Node.js and it is called Node.js.
+WORKING:
+node.js-is a javascript runtime environment(OUTER LAYER)
+js wrappers:  are used to create server in node.js(SECOND LAYER)
+v8 engine : is used to create server in node.js(INNER LAYER)
+*/
