@@ -20,6 +20,9 @@ please try implementing following code one by one.*/
 //   }
 //   console.log(add(5, 3));
 
+//Please open the index.html file on your browser and
+// please check the console(inspect -> console).
+
 //-------------------ARRAYS-------------------//
 // //array : array is a collection of elements.
 //Tip -this array is not like array in c/c++/java/python.
@@ -158,25 +161,139 @@ please try implementing following code one by one.*/
 /*
 1.Node.js basics
 2.Introduction
-3.Instaliing Node.js and name
+3.Instaliing Node.js and npm
 4.Working with modules
 5.File system operations
 6.Understanding HTTP modules and API */
 
-/*Node.js:Not a programming language
-Node.js is a 'runtime environment' for JavaScript.
+/* Node.js BASICS:
+Node.js:Not a programming language
+Node.js is a 'runtime environment' for JavaScript.Runtime means jabtak chalega
 It allows you to run JavaScript code outside of a web browser.
 It is used to build server-side applications and APIs.
 It is built on Chrome's V8 JavaScript engine.
 It is open-source and free to use.
 */
-/*Because javascript doesn't have functionalities for backend development
+/* INTRODUCTION:
+Because javascript doesn't have functionalities for backend development
 Ryan Dahl created Node.js-he designed it for the backend.
 Ryan Dehl modified code in Google Chrome  V8 engine (open source)to create Node.js.
 He tried to create server in Node.js-I have to code in js(becuase chrome's V8 engine is in c++).
 he use js wrapper to create server in Node.js and it is called Node.js.
-WORKING:
+BACKEND WORKING:
 node.js-is a javascript runtime environment(OUTER LAYER)
 js wrappers:  are used to create server in node.js(SECOND LAYER)
 v8 engine : is used to create server in node.js(INNER LAYER)
 */
+/*INSTALLING NODE.JS AND NPM:
+Node.js  and npm can be downloaded from the official website.
+npm is a package manager that helps you install and manage Node.js packages.
+
+*/
+/*WORKING WITH MODULES:
+Modules are a way to organize and reuse code in Node.js.
+Modules are created by exporting and importing code.
+
+In your folder , use new terminal.
+type 'node -v' to check if node.js is installed
+type 'npm -v' to check if npm is installed
+type 'npm init' to create a package.json file (it is a file that contains information about your project)
+type 'npm install express' to install express module (it is a framework that helps you create server in node.js)
+type 'npm install nodemon' to install nodemon module (nodemon is used to restart the server)
+type 'npm install -g nodemon' to install nodemon globally( it is a package that helps you restart the server)
+
+------WE ARE NOT USING PROMISE APIs.WE WILL USE CALLBACK AND SYNC APIs------
+In your script.js file , type 'nodemon script.js' to start the server
+
+*/
+/*CALLBACK API:
+Callback API is a way to handle asynchronous operations in Node.js.
+Callback API is used when you want to execute a function after another function has finished executing.
+We will be learning:
+
+*/
+
+
+////CALLBACK API Details:
+//// 1.writefile:It is used to write a file.
+//// syntax: fs.writeFile(filename, data, callback)
+////EXAMPLE:
+// const fs = require('fs');   //require is used to import fs(Filesystem) module
+// fs.writeFile('hey.txt', 'Kaise Ho Bhai!!', function(err) {   //err is used to check if the file is written
+// if (err) {
+//      console.error('Error',err);  //if the file is not written
+//      return;        
+//    }else console.log('Write hogaya bhai!!!');  //if the file is written
+//  });
+////Code running instructions:1.open terminal and type 'node script.js'.
+////test case: error will be displayed if the file is not written 
+////test case: 'Write hogaya bhai!!!' will be displayed if the file is written.
+
+/*----------------------------------------------------------------------*/
+
+//// 2.appendfile:It is used to append(add data to a file)
+//// syntax: fs.appendFile(filename, data, callback)
+////EXAMPLE:
+// const fs = require('fs');   //require is used to import fs(Filesystem) module
+// fs.appendFile('hey.txt', 'Main To achha Hun Bhai!!', function(err) {   //err is used to check if the file is written
+// if (err) {
+//      console.error('Error',err);  //if the file is not written
+//      return;        
+//    }else console.log('Append hogaya bhai!!!');  //if the file is written
+//  });
+////Code running instructions:1.open terminal and type 'node script.js'.
+////test case: error will be displayed if the file is not written r 
+////test case: 'Append hogaya bhai!!!' will be displayed if the file is written.
+////change in txt file:Kaise Ho Bhai!!Main To achha Hun Bhai!!
+
+/*----------------------------------------------------------------------*/
+//// 3.copyfile:It is used to copy a file.
+//// syntax: fs.copyFile(src, dest, callback)
+////EXAMPLE:
+// const fs = require('fs');   //require is used to import fs(Filesystem) module
+// fs.copyFile('hey.txt', 'hello.txt', function(err) {   //err is used to check if the file is written
+// if (err) {
+//          console.error('Error',err);  //if the file is not written
+//          return;        
+//        }else console.log('Copy hogaya bhai!!!');  //if the file is written
+//   });
+////Code running instructions:1.open terminal and type 'node script.js'.
+////test case: error will be displayed if the file is not written
+////test case: 'Copy hogaya bhai!!!' will be displayed if the file is written.  
+
+// /*----------------------------------------------------------------------*/
+
+//// 4.rename:It is used to rename a file.
+//// syntax: fs.rename(oldPath, newPath, callback)
+////EXAMPLE:
+// const fs = require('fs');   //require is used to import fs(Filesystem) module
+// fs.rename('hello.txt', 'hi.txt', function(err) {   //err is used to check if the file is written
+// if (err) {
+    //          console.error('Error',err);  //if the file is not written
+    //          return;        
+    //        }else console.log('Rename hogaya bhai!!!');  //if the file is written
+//   });
+////Code running instructions:1.open terminal and type 'node script.js'.
+////test case: error will be displayed if the file is not written 
+////test case: 'Rename hogaya bhai!!!' will be displayed if the file is written.
+
+
+// /*----------------------------------------------------------------------*/
+
+
+//// 5.unlink:It is used to unlink a file.
+//// syntax: fs.unlink(path, callback)
+////EXAMPLE:
+// const fs = require('fs');   //require is used to import fs(Filesystem) module
+// fs.unlink('hi.txt', function(err) {   //err is used to check if the file is written
+// if (err) {
+//          console.error('Error',err);  //if the file is not written
+//          return;        
+//        }else console.log('Unlink hogaya bhai!!!');  //if the file is written
+//   });
+////Code running instructions:1.open terminal and type 'node script.js'.
+////test case: error will be displayed if the file is not written 
+////test case: 'Unlink hogaya bhai!!!' will be displayed if the file is written.
+
+
+// /*----------------------------------------------------------------------*/
