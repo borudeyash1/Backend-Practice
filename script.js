@@ -234,6 +234,7 @@ We will be learning:
 //// 2.appendfile:It is used to append(add data to a file)
 //// syntax: fs.appendFile(filename, data, callback)
 ////EXAMPLE:
+////note: hey.txt should be present in your folder
 // const fs = require('fs');   //require is used to import fs(Filesystem) module
 // fs.appendFile('hey.txt', 'Main To achha Hun Bhai!!', function(err) {   //err is used to check if the file is written
 // if (err) {
@@ -250,15 +251,17 @@ We will be learning:
 //// 3.copyfile:It is used to copy a file.
 //// syntax: fs.copyFile(src, dest, callback)
 ////EXAMPLE:
-// const fs = require('fs');   //require is used to import fs(Filesystem) module
-// fs.copyFile('hey.txt', 'hello.txt', function(err) {   //err is used to check if the file is written
-// if (err) {
-//          console.error('Error',err);  //if the file is not written
-//          return;        
-//        }else console.log('Copy hogaya bhai!!!');  //if the file is written
-//   });
+////note: hey.txt should be present in your folder
+const fs = require('fs');   //require is used to import fs(Filesystem) module
+fs.copyFile('hey.txt', 'copy.txt', function(err) {   //err is used to check if the file is written
+if (err) {
+         console.error('Error',err);  //if the file is not written
+         return;        
+       }else console.log('Copy hogaya bhai!!!');  //if the file is written
+  });
 ////Code running instructions:1.open terminal and type 'node script.js'.
 ////test case: error will be displayed if the file is not written
+////copy.txt will be created.
 ////test case: 'Copy hogaya bhai!!!' will be displayed if the file is written.  
 
 // /*----------------------------------------------------------------------*/
@@ -266,16 +269,18 @@ We will be learning:
 //// 4.rename:It is used to rename a file.
 //// syntax: fs.rename(oldPath, newPath, callback)
 ////EXAMPLE:
+////note: hey.txt should be present in your folder
 // const fs = require('fs');   //require is used to import fs(Filesystem) module
 // fs.rename('hello.txt', 'hi.txt', function(err) {   //err is used to check if the file is written
 // if (err) {
-    //          console.error('Error',err);  //if the file is not written
-    //          return;        
-    //        }else console.log('Rename hogaya bhai!!!');  //if the file is written
+//              console.error('Error',err);  //if the file is not written
+//              return;        
+//            }else console.log('Rename hogaya bhai!!!');  //if the file is written
 //   });
 ////Code running instructions:1.open terminal and type 'node script.js'.
 ////test case: error will be displayed if the file is not written 
 ////test case: 'Rename hogaya bhai!!!' will be displayed if the file is written.
+////change in txt file:name changed from hello.txt to hi.txt
 
 
 // /*----------------------------------------------------------------------*/
@@ -284,6 +289,7 @@ We will be learning:
 //// 5.unlink:It is used to unlink a file.
 //// syntax: fs.unlink(path, callback)
 ////EXAMPLE:
+////note: hi.txt should be present in your folder
 // const fs = require('fs');   //require is used to import fs(Filesystem) module
 // fs.unlink('hi.txt', function(err) {   //err is used to check if the file is written
 // if (err) {
