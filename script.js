@@ -3,7 +3,7 @@
 please try implementing following code one by one.*/
 //  alert('RELOADED');
 /* 
-------Fundaments of JavaScript-------
+**************************************Fundaments of JavaScript**************************************
 ->Function returns
 ->Arrays and Objects
 ->Function returnsmethods:forEach , map, filter, reduce, find,
@@ -23,7 +23,7 @@ please try implementing following code one by one.*/
 //Please open the index.html file on your browser and
 // please check the console(inspect -> console).
 
-//-------------------ARRAYS-------------------//
+//-------------------ARRAYS------------------------//
 // //array : array is a collection of elements.
 //Tip -this array is not like array in c/c++/java/python.
 // It can store any type of data.
@@ -157,7 +157,7 @@ please try implementing following code one by one.*/
 
 ////We are done with the intro of Js.Let's learn about basics of Node.js
 
-//------------------------------Node.js----------------------------------------------//
+//**************************************Node.js**********************************************************************//
 /*
 1.Node.js basics
 2.Introduction
@@ -368,4 +368,126 @@ syntax: fs.rmdir(path, {recursive: true}, callback)
 ////Code running instructions:1.open terminal and type 'node script.js'.
 ////test case: ' Directory gayi bhai bhai!!!' will be displayed if the file is written
 
+
+
 /*----------------------------------------------------------------------*/
+/*HTTP and HTTPS SERVER:
+What is Protocol?
+A protocol is a set of rules that define how data is transmitted over a network.
+There are two types of protocols: HTTP and HTTPS.
+
+What is HTTP?
+HTTP (Hypertext Transfer Protocol) is a protocol for transferring data over the internet.
+It is a set of rules that define how data is transmitted over the internet.
+HTTP is used for communication between clients and servers.
+
+What is HTTPS?
+HTTPS (Hypertext Transfer Protocol Secure) is a protocol for transferring data over the internet.
+It is a set of rules that define how data is transmitted over the internet.
+HTTPS is a secure version of HTTP that uses encryption to protect data from being intercepted or modified by third parties.
+*/
+
+/*HTTP SERVER:
+HTTP servers are used to handle requests from clients.
+HTTP servers are created by exporting and importing code.   
+HTTP 1 HAS TWO VERSIONS:
+HTTP 1.0 and HTTP 1.1
+
+WHAT is HTTP 1.0?
+HTTP 1.0 is a version of the HTTP protocol.
+specs:It is a stateless protocol, meaning that each request
+is treated as a separate entity and does not depend on the
+state of the server.
+It is a connection-oriented protocol, meaning that the server
+
+
+WHAT IS HTTP 1.1?    
+HTTP 1.1 is a version of the HTTP protocol.
+specs:It has all the features of HTTP 1.0,but it is more efficient because 
+it uses persistent connections
+(means that the server keeps a connection open between the client and the server).
+
+
+
+
+WHAT IS HTTP 2.0?
+specs:
+- It is a more efficient version of HTTP 1.1.
+- It uses multiplexing to improve performance.
+- It uses header compression to reduce overhead.
+- It uses server push to improve performance.
+
+WHAT IS HTTP 3.0?
+specs:
+- It is a more efficient version of HTTP 2.0 because it uses QUIC(Quick UDP Internet Connections)
+-faster recovery from packets lost
+- faster connection establishment
+- faster data transfer
+
+
+*/
+/*HTTP MODULES:
+HTTP modules are used to create HTTP servers in Node.js.
+HTTP modules are created by exporting and importing code.
+HTTP modules are used to handle requests from clients.
+
+*/
+//example:
+// const http = require('http');
+// const server = http.createServer(function(req, res){
+//     res.end('Hello World');
+// });
+// server.listen(3300);   //any inactive port can be used
+//just go to http://localhost:3300 in your browser
+//it will display 'Hello World' in your browser until the server is closed(if we type 'ctrl+c' in the terminal)
+//the server will be closed and the browser will display 'Cannot connect to the server' in the browser
+//  until the server is restarted(if we type 'node script.js' /'nodemon script.js' in the terminal)
+
+
+/*******************************************NPM*****************************************************************************/
+/*
+1.NPM understanding
+2.Installing and uninstalling anything basics and advanced
+3.dependencies
+4.devdependencies
+scripts - understanding default scripts PATH and custom scripts
+*/
+
+/*NPM understanding:
+npm is a package manager that helps you install and manage Node.js packages.
+Fun fact : it has a lot of packages other than Node.js packages.
+like react,react-native,angular,etc.
+
+Installed node.js is called as 'module'
+and downloaded from 'npm' is called as 'package'
+example:
+1.text to speech package by npm : 'npm i text-to-speech'
+2.image to speech package by npm : 'npm i image-to-speech'
+3.video to speech package by npm : 'npm i video-to-speech'
+4.face detection package by npm : 'npm i face-detection'
+5.speech to text package by npm : 'npm i speech-to-text'
+6.object detection package by npm : 'npm i object-detection'
+7.image classification package by npm : 'npm i image-classification'
+8.natural language processing package by npm : 'npm i natural-language-processing'
+9.machine learning package by npm : 'npm i machine-learning'
+10.deep learning package by npm : 'npm i deep-learning'
+
+Uninstall:npm uninstall <package_name>  
+*/
+/*What are Node modules?
+Node modules are packages that contain code that can be reused across multiple projects.
+Node modules are created by exporting and importing code.
+
+It has dependencies of devDependencies.
+
+dependencies:are used to install packages that are required for the project.example: express,etc.
+install: npm i express 
+uninstall: npm uninstall express
+
+/*
+devDependencies:are used to install packages that are required for the development of the project
+but are not required for the production/deployment of the project eg: nodemonetc.
+install: npm i nodemon --save-dev
+uninstall: npm uninstall nodemon
+
+*/
