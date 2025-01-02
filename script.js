@@ -252,13 +252,13 @@ We will be learning:
 //// syntax: fs.copyFile(src, dest, callback)
 ////EXAMPLE:
 ////note: hey.txt should be present in your folder
-const fs = require('fs');   //require is used to import fs(Filesystem) module
-fs.copyFile('hey.txt', 'copy.txt', function(err) {   //err is used to check if the file is written
-if (err) {
-         console.error('Error',err);  //if the file is not written
-         return;        
-       }else console.log('Copy hogaya bhai!!!');  //if the file is written
-  });
+// const fs = require('fs');   //require is used to import fs(Filesystem) module
+// fs.copyFile('hey.txt', 'copy.txt', function(err) {   //err is used to check if the file is written
+// if (err) {
+//          console.error('Error',err);  //if the file is not written
+//          return;        
+//        }else console.log('Copy hogaya bhai!!!');  //if the file is written
+//   });
 ////Code running instructions:1.open terminal and type 'node script.js'.
 ////test case: error will be displayed if the file is not written
 ////copy.txt will be created.
@@ -269,16 +269,16 @@ if (err) {
 //// 4.rename:It is used to rename a file.
 //// syntax: fs.rename(oldPath, newPath, callback)
 ////EXAMPLE:
-////note: hey.txt should be present in your folder
+////note: hello.txt should be present in your folder if not,you can make it as 'hello.txt'
 // const fs = require('fs');   //require is used to import fs(Filesystem) module
-// fs.rename('hello.txt', 'hi.txt', function(err) {   //err is used to check if the file is written
+// fs.rename('hey.txt', 'hi.txt', function(err) {   //err is used to check if the file is written
 // if (err) {
-//              console.error('Error',err);  //if the file is not written
+//              console.error('Error',err.message);  //if the file is not written
 //              return;        
 //            }else console.log('Rename hogaya bhai!!!');  //if the file is written
 //   });
 ////Code running instructions:1.open terminal and type 'node script.js'.
-////test case: error will be displayed if the file is not written 
+////test case: error 
 ////test case: 'Rename hogaya bhai!!!' will be displayed if the file is written.
 ////change in txt file:name changed from hello.txt to hi.txt
 
@@ -286,16 +286,16 @@ if (err) {
 // /*----------------------------------------------------------------------*/
 
 
-//// 5.unlink:It is used to unlink a file.
+//// 5.unlink:It is used to unlink(delete) a file.
 //// syntax: fs.unlink(path, callback)
 ////EXAMPLE:
 ////note: hi.txt should be present in your folder
 // const fs = require('fs');   //require is used to import fs(Filesystem) module
 // fs.unlink('hi.txt', function(err) {   //err is used to check if the file is written
 // if (err) {
-//          console.error('Error',err);  //if the file is not written
+//          console.error('Error',err.message);  //if the file is not written
 //          return;        
-//        }else console.log('Unlink hogaya bhai!!!');  //if the file is written
+//        }else console.log('Unlink/delete hogaya bhai!!!');  //if the file is written
 //   });
 ////Code running instructions:1.open terminal and type 'node script.js'.
 ////test case: error will be displayed if the file is not written 
@@ -303,3 +303,69 @@ if (err) {
 
 
 // /*----------------------------------------------------------------------*/
+
+
+//// 6.readdir:It is used to read a Folder/ directory.
+//// syntax: fs.readdir(path, callback)
+////EXAMPLE:
+// const fs = require('fs');   //require is used to import fs(Filesystem) module
+// fs.readdir('.', function(err, files) {   //err is used to check if the file is written
+// if (err) {
+    //          console.error('Error',err.message);  //if the file is not written
+    //          return;        
+    //        }else console.log(files);  //if the file is written
+//   });
+////Code running instructions:1.open terminal and type 'node script.js'.
+////test case: error will be displayed if the file is not written 
+////test case: 'Unlink hogaya bhai!!!' will be displayed if the file is written.
+
+// /*----------------------------------------------------------------------*/
+//// 7.mkdir:It is used to create a directory.
+// syntax: fs.mkdir(path, { recursive: true }, callback)
+//EXAMPLE:
+// const fs = require('fs');   //require is used to import fs(Filesystem) module
+// fs.mkdir('./newdir', { recursive: true }, function(err) {   //err is used to check if the file is written
+// if (err) {
+//              console.error('Error',err.message);  //if the file is not written
+//              return;        
+//            }else console.log('Directory created successfully!!!');  //if the file is written
+//   });
+////Code running instructions:1.open terminal and type 'node script.js'.
+////test case: error will be displayed if the file is not written 
+////test case: 'Directory created successfully!!!' will be displayed if the file is written.
+
+// /*----------------------------------------------------------------------*/  
+
+// 8.rmdir:It is used to remove a directory(only empty directory).
+// syntax: fs.rmdir(path, callback)
+//EXAMPLE:there is a folder named 'rmdir' in your main directory
+//it has no files in it
+// const fs = require('fs');   //require is used to import fs(Filesystem) module
+// fs.rmdir('./rmdir', function(err) {   //here,rmdir is the directory/folder path that you want to remove
+// if (err) {
+//              console.error('Error',err.message);  //if the file is not written
+//              return;        
+//            }else console.log('Directory removed successfully!!!');  
+//   });
+////Code running instructions:1.open terminal and type 'node script.js'.
+////test case: ' Directory gayi bhai bhai!!!' will be displayed if the file is
+
+/*--But----------------------------------------------
+if the directory is not empty,you will get an error
+suppose it has 'a.txt' file in it
+then,we use the option {recursive: true}
+syntax: fs.rmdir(path, {recursive: true}, callback)
+*/
+
+////example:
+// const fs = require('fs');   //require is used to import fs(Filesystem) module
+// fs.rmdir('./rmdir', {recursive: true}, function(err) {   //here,rmdir is the directory/folder path that you want to remove
+// if (err) {
+//              console.error('Error',err.message);  //if the file is not written
+//              return;        
+//            }else console.log('Directory removed successfully!!!');  
+//   });
+////Code running instructions:1.open terminal and type 'node script.js'.
+////test case: ' Directory gayi bhai bhai!!!' will be displayed if the file is written
+
+/*----------------------------------------------------------------------*/
