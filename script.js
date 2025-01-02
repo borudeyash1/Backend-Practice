@@ -3,12 +3,14 @@
 please try implementing following code one by one.*/
 //  alert('RELOADED');
 /* 
-Fundaments of JavaScript 
-Functions and Objects
-Function returns
-async js coding
-forEach , map, filter, reduce, find,
-findIndex, some, every, sort, reverse,etc */ 
+------Fundaments of JavaScript-------
+->Function returns
+->Arrays and Objects
+->Function returnsmethods:forEach , map, filter, reduce, find,
+->findIndex, some, every, sort, reverse,etc.
+
+
+->async js coding           */ 
 
 
 // //Function returns:
@@ -116,8 +118,12 @@ findIndex, some, every, sort, reverse,etc */
 //size of function is the number of arguments/parameters passed to the function and it takes.
 //size of object is the number of properties in the object.
 //example:
-function person(name, age, city){}
-  log(person);         //test case : got '3' as length in console by typing 'person.length'
+// function person(name, age, city){}
+//   log(person);         //test case : got '3' as length in console by typing 'person.length'
+
+
+
+
 
 // // async js coding:
 // async function myFunction() {
