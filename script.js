@@ -603,6 +603,49 @@ facebook will accept the request and send the image to the user.
 but we can add a middleware to facebook to handle the request and send the image to the user.
 We can pause the recieving request and perform some action before sending the response(using middelware).
 requests can be:1.get 2.post 3.put 4.delete
+*/
+////example:
+// const express = require('express');
+// const app = express();
 
-example:*/
+// app.use(function(req, res, next) {                               //1st middleware(we want to call it first)
+//     console.warn("Middleware hain bhai");         
+//     next();                                                    //we must use next to continue display the route(doesn't matter if it is working or not)
+// });
+
+// app.use(function(req, res, next) {                                //2nd middleware
+//     console.warn("Doosra middleware hain bhai");         
+//     next(); 
+// });
+
+// app.get('/', function(req, res) {                                 //home page route(working)
+//     res.send("Home page hain bhai")
+// });
+
+// app.get('/profile', function(req, res) {                          //profile route (working)
+//     res.send("Profile page hain bhai")
+// });
+
+// app.get('/login', function(req, res, next) { 
+//     return next(new Error("Not implemented"));                   //we want to show that login page has problem
+// });                                                              //so,we called the error handler middleware using next
+
+// app.use(function(err, req, res, next) {                           //error handler middleware
+//     console.error(err.stack); 
+//     res.status(500).send('Something broke!'); 
+// });
+
+// app.listen(3000);         
+ 
+////---------------------------------------------------------------------------------------------------------------//
+////******************Remember:  FRONTEND - BACKEND - FRONTEND********************              // server
+/*-------------ERROR HANDLERS-------------*/
+////Syntax FOR ERROR HANDLERS(PLEASE USE AT LAST IN YOUR SCRIPT.JS FILE):
+/*const express = require('express');
+const app = express();
+app.use(function(err, req, res, next) {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
+  });
+*/
 
