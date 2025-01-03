@@ -518,9 +518,91 @@ now save it and open terminal
 test cases:
 1.npm start:should start node server.js
 
-2.npm chacha:should print Chacha is herein the terminal
+2.npm chacha:should print Chacha is here in the terminal
 but,it will return an error because chacha is an unknown command.
 Therefore,we have to use 'npm run chacha' instead of 'npm chacha'.
 Npw,> backend-practice@1.0.0 chacha
     > echo"Chacha is here    //success
 */
+
+/*************************Express.js Framework************************** */
+/*What is a framework?
+A framework is a collection of tools and libraries that help you build a software application.
+It is a set of pre-built components that you can use to build your application.
+
+
+What is Express.js?
+It is a npm package that helps you build web applications and APIs.
+Express.js is a popular Node.js web framework for building web applications and APIs.
+It is used to create a server and handle HTTP requests and responses.
+It is a set of tools and libraries that help you build a software application.
+
+How it works?
+Suppose we sent a request (clicked on the image link) to facebook to show the image.
+Facebook will use Express.js to handle the request and send the image to the user.
+It is a set of tools and libraries that help you build a software application.
+
+installation; In your terminal, type 'npm i express' or 'npm install express' .
+*/
+////In your script.js file, type 
+// const express = require('express');     // to import express module.
+// const app = express();                  // to create an express app.
+// app.get('/', (req, res) => {            // to create a route.
+//     res.send('Hello Harsh');  
+    
+//               // to send a response.
+// });
+// app.listen(3000);                       // to start the server.
+
+/*-----------------------------------------------ROUTES----------------------------------------------------------------*/
+/*What is a route?
+A route is a path that is used to access a resource.
+example:http://localhost:3000/                     //this is default (/) route.
+        http://localhost:3000/home                 //this is home route.
+        http://localhost:3000/contact             //this is contact route.
+        http://localhost:3000/about               //this is about route.
+*/
+
+
+//example:
+// Run the following code in your script.js file:
+//use command 'nodemon script.js'
+
+// const express = require('express');
+// const app = express();
+
+// app.get('/',function(req,res){
+//   res.send("Home page hain bhai")
+// })
+
+// app.get('/profile',function(req,res){
+//     res.send("Profile page hain bhai")
+//   })
+// app.get('/profile/male',function(req,res){
+//     res.send("Male kaProfile page hain bhai")
+//   })
+// app.get('/profile/male/smit',function(req,res){
+//     res.send("Smitraj ka Profile page hain bhai")
+//   })  
+// //and so on for all the route
+// app.listen(3000);
+
+//What is nodemon and what is it used for?
+//nodemon is a tool that automatically restarts the server when you make changes to the code.
+//install->npm install -g nodemon
+//run script.js using nodemon:nodemon script.js   or npx nodemon script.js
+
+/*-----------------------------------------------MIDDLEWARES----------------------------------------------------------------*/
+/*What is a middleware?
+A middleware is a function that is used to handle requests and responses.
+It is a function that is used to handle requests and responses.
+
+How middleware  works?
+Suppose we sent a request (clicked on the image link) to facebook to show the image.
+facebook will accept the request and send the image to the user.
+but we can add a middleware to facebook to handle the request and send the image to the user.
+We can pause the recieving request and perform some action before sending the response(using middelware).
+requests can be:1.get 2.post 3.put 4.delete
+
+example:*/
+
