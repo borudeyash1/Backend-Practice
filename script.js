@@ -649,3 +649,68 @@ app.use(function(err, req, res, next) {
   });
 */
 
+
+/**********************************FORM HANDLING*****************************************************/
+/*What is a form? :
+A form is a HTML element that is used to collect user input.
+syntax:
+<form action="/action_page.html  " method="post">
+<label for="fname">First name:</label><br>
+<input type="text" id="fname" name="fname" value="John"><br>
+<label for="lname">Last name:</label><br>
+<input type="text" id="lname" name="lname" value="Doe"><br>
+<input type="submit" value="Submit">
+</form>
+*/
+
+/*---------------------------Cookies-------------------------------------------*/
+//Usually what happens,when we use some wesite,if we give request to download the image,it asks ,what is your username and 
+//password.We give it .Again ,we want to see another picture,again it happens ,server asks you what is your username and
+//this is very frustrating.
+//So,we use cookies to save the user's information.
+//syntax:
+// app.use(express.json());                         //these two lines are for parsing the request body(used in postman)
+// app.use(express.urlencoded({ extended: true }));  //parsing means converting the request body to a javascript object
+
+
+//example:
+
+
+// const express = require('express');
+// const cookieParser = require('cookie-parser'); // Import cookie-parser middleware
+// const app = express();
+
+// app.use(cookieParser()); // Use cookie-parser middleware
+
+// app.get('/', function(req, res) {
+//     res.send("Home page hai bhai");
+// });
+
+// app.get('/profile', function(req, res) {
+//     res.send("Profile page hai bhai");
+// });
+
+// app.get('/setcookie', function(req, res) {
+//     res.cookie('name', 'harsh');
+//     res.send("Cookie hai bhai");
+// });
+
+// app.get('/getcookie', function(req, res) {
+//     var name = req.cookies.name; // Access the cookie using req.cookies
+//     if (name) {
+//         res.send(`Cookie name value: ${name}`);
+//     } else {
+//         res.send("Cookie not found");
+//     }
+// });
+
+// app.listen(3000, () => {
+//     console.log('Server is running on port 3000');
+// });
+
+////test cases:
+//1.open terminal and type 'node script.js'
+//2.open browser and type 'http://localhost:3000'
+//3.open browser and type 'http://localhost:3000/profile'
+//4.open browser and type 'http://localhost:3000/setcookie'->
+//5.open browser and type 'http://localhost:3000/getcookie'->cookie name value: harsh
