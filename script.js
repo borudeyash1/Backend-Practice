@@ -1,5 +1,5 @@
 /* Following code is written by borudeyash1*/
-/*------------Intruction!------------ 
+/*------------Instruction!------------ 
 please try implementing following code one by one.*/
 //  alert('RELOADED');
 /* 
@@ -46,7 +46,7 @@ please try implementing following code one by one.*/
 // const numbers = prompt('Enter array elements (space separated):').split(' ').map(Number);
 
 // const square = numbers.map(function(num){
-//   return num**2;
+//   return num**3;
 // });
 // console.log('Squared Numbers are:', square);
 
@@ -59,7 +59,7 @@ please try implementing following code one by one.*/
 //     if(num % 2 === 0)return true;
 //     else return false;
 
-// });
+// });                                                                          
 // console.log('even numbers are: ',even);
 
 // //way 2: using arrow function and directly returning the value
@@ -71,7 +71,7 @@ please try implementing following code one by one.*/
 // //reduce function:
 // //logic : reduce function is used to reduce an array to a single value.
 // const numbers = [1, 2, 3, 4, 5];
-// const sum = numbers.reduce((acc, num) => acc + num, 0);
+// const sum = numbers.reduce((acc, num) => acc + num, 0);  //here,acc is accumulator
 // console.log('Sum of numbers is:', sum);  
 
 ////find function:
@@ -151,13 +151,12 @@ please try implementing following code one by one.*/
 //     var blob = await fetch('https://randomuser.me/api/');   //fetch is used to fetch data from api
 //     var ans = await blob.json();    //json is used to convert data to json and awiat is used to wait for the function to complete
 //     console.log(ans);           //replace this with console.log(ans.results[0].name) to get the name of the person ans.results[0].name .Refresh the page to get a new person.
-    
 //   }
 // myFunction();
 
 ////We are done with the intro of Js.Let's learn about basics of Node.js
 
-//**************************************Node.js**********************************************************************//
+//**************************************Node.js************************************************************//
 /*
 1.Node.js basics
 2.Introduction
@@ -219,7 +218,7 @@ We will be learning:
 //// syntax: fs.writeFile(filename, data, callback)
 ////EXAMPLE:
 // const fs = require('fs');   //require is used to import fs(Filesystem) module
-// fs.writeFile('hey.txt', 'Kaise Ho Bhai!!', function(err) {   //err is used to check if the file is written
+// fs.writeFile('abhi.txt', 'Kaise Ho abhishek!!', function(err) {   //err is used to check if the file is written
 // if (err) {
 //      console.error('Error',err);  //if the file is not written
 //      return;        
@@ -317,7 +316,7 @@ We will be learning:
 //   });
 ////Code running instructions:1.open terminal and type 'node script.js'.
 ////test case: error will be displayed if the file is not written 
-////test case: 'Unlink hogaya bhai!!!' will be displayed if the file is written.
+////test case: '[ \'script.js\', \'package.json\' ]' will be displayed if the file is written.
 
 // /*----------------------------------------------------------------------*/
 //// 7.mkdir:It is used to create a directory.
@@ -341,7 +340,7 @@ We will be learning:
 //EXAMPLE:there is a folder named 'rmdir' in your main directory
 //it has no files in it
 // const fs = require('fs');   //require is used to import fs(Filesystem) module
-// fs.rmdir('./rmdir', function(err) {   //here,rmdir is the directory/folder path that you want to remove
+// fs.rmdir('./newdir',{recursive: true}, function(err) {   //here,rmdir is the directory/folder path that you want to remove
 // if (err) {
 //              console.error('Error',err.message);  //if the file is not written
 //              return;        
@@ -350,7 +349,7 @@ We will be learning:
 ////Code running instructions:1.open terminal and type 'node script.js'.
 ////test case: ' Directory gayi bhai bhai!!!' will be displayed if the file is
 
-/*--But----------------------------------------------
+/*--But----------------------------------------------------
 if the directory is not empty,you will get an error
 suppose it has 'a.txt' file in it
 then,we use the option {recursive: true}
@@ -370,7 +369,7 @@ syntax: fs.rmdir(path, {recursive: true}, callback)
 
 
 
-/*----------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------*/
 /*HTTP and HTTPS SERVER:
 What is Protocol?
 A protocol is a set of rules that define how data is transmitted over a network.
@@ -398,7 +397,8 @@ HTTP 1.0 is a version of the HTTP protocol.
 specs:It is a stateless protocol, meaning that each request
 is treated as a separate entity and does not depend on the
 state of the server.
-It is a connection-oriented protocol, meaning that the server
+It is a connection-oriented protocol, meaning that the server keeps
+a connection open between the client and the server until the client disconnects. 
 
 
 WHAT IS HTTP 1.1?    
@@ -714,3 +714,200 @@ syntax:
 //3.open browser and type 'http://localhost:3000/profile'
 //4.open browser and type 'http://localhost:3000/setcookie'->
 //5.open browser and type 'http://localhost:3000/getcookie'->cookie name value: harsh
+
+
+//*************************************SESSION************************************************** */
+//What is a session?
+//A session is a way to store information about a user in a web application.
+//It is a way to keep track of a user's interactions with the application.
+//A session is typically stored on the server-side, and is associated with a unique identifier, known as a session ID.
+//The session ID is stored in a cookie on the client-side, and is used to retrieve the session information from the server.
+
+//How session works?
+//When a user makes a request to the server, the server checks if the user has a valid session. If the user has a valid session,
+//the server serves the user's request. If the user does not have a valid session, the server creates a new session for the user,
+//stores the session ID in a cookie, and sends the user's request to the server.
+
+//When the user makes a request to the server, the server checks if the user has a valid session. If the user has a valid session,
+//syntax:
+// app.use(session({                      //session middleware
+//     secret: 'secret',                  //secret key
+//     resave: false,                     //resave
+//     saveUninitialized: true            //saveUninitialized(means if the session is not initialized,save it)
+//   }));
+
+////Example:
+
+// const express = require('express');
+// const session = require('express-session');
+
+// const app = express();
+
+// app.use(session({
+//     secret: 'secret',
+//     resave: false,
+//     saveUninitialized: true,
+//     cookie: {
+//         secure: false, // Set to true if using HTTPS
+//         httpOnly: true, // Prevents client-side JavaScript from accessing the cookie
+//         maxAge: 60000 // Cookie expires after 1 minute
+//     }
+// }));
+
+// app.get('/', function(req, res) {
+//     if (req.session.count) {
+//         req.session.count++;
+//     } else {
+//         req.session.count = 1;
+//     }
+//     res.send(`You have visited this page ${req.session.count} times`);
+// });
+
+// app.listen(3000, () => {
+//     console.log('Server is running on port 3000');
+// });
+
+
+//1.start server
+//2.open browser and type 'http://localhost:3000'
+//3.refresh the page
+//4.refresh the page again(you will get the same result)
+//5.refresh the page again(you will get the same result)
+
+
+/*********************DYNAMIC ROUTES************************ */
+//Dynamic routes are routes that can be changed at runtime. They are useful when you want to creat
+// routes dynamically based on user input or other dynamic data.
+
+//How dynamic routes work?
+
+/* ->create a url you want by going on browser(ignore the error).
+example:localhost:3000/about/
+
+->create a route in server.js
+->agar us hi url ko dynamic banana hain ,t oonly variable route ke pehle colon(:) lagado
+syntax::localhost:3000/:about/              //dynamic route
+example:
+app.get("/profile/:variable", function (req, res) {
+    res.send("Hello " + req.params.variable);  //req.params.variable will contain the value of the variable in the URL
+});
+TEST CASE : 
+START THE NODE,JS server.
+IN YOUR BROWSER ,RELOAD THE PAGE.
+USE THE PATH localhost:3000/profile/:SMITRAJ
+you will get "Hello , SMITRAJ"
+
+change to localhost:3000/profile/:YASH
+you will get "Hello ,YASH"  
+
+similarly , we can display output for any variable route using this 'dynamic routing'.\
+
+
+*
+ */
+//start node.js server
+////EXAMPLE:
+// const express = require("express");
+// const path = require("path"); // Correctly require the path module
+// const app = express();
+
+// app.use(express.json());                            // For parsing JSON
+// app.use(express.urlencoded({ extended: true }));    // For parsing form data
+
+// // Set the view engine to EJS
+// app.set("view engine", "ejs");
+
+// // Serve static files from the "public" directory
+// app.use(express.static(path.join(__dirname, "public"))); 
+
+// app.get("/", function (req, res) {
+//     res.render("index");
+// });
+// app.get("/profile", function (req, res) {
+//     res.send("This is a profile page");
+// });
+
+// app.get("/profile/:variable", function (req, res) {     //dynamic routing for any variable value
+//     res.send("Hello " + req.params.variable);  //req.params.variable will contain the value of the variable in the URL
+// });
+// app.get("/profile/:name/:age", function (req, res) {  //dynamic routing for name and age
+//     res.send("Hello " + req.params.name + " of age " + req.params.age + " years");  //req.params.variable will contain the value of the variable in the URL
+// });      //here, name and age are variable names.
+
+// app.listen(3000, function () {
+//     console.log("Server started on port 3000");
+// });
+
+//*****************************MONGO DB******************************* */
+//what is mongo db?
+//MongoDB is a NoSQL database that stores data in a JSON-like format. It is a
+//document-oriented database, which means that it stores data in the form of
+//documents or objects, where each document represents a single record or entity.
+//it is a relational database.
+//example:
+// const express = require("express");
+// const mongoose = require("mongoose");
+// const userModel = require("./models/userModel"); // Importing the user model
+
+// const app = express();
+
+// // Connect to MongoDB
+// mongoose
+//   .connect("mongodb+srv://borudeyash1:%40Yborude369@cluster0.dhq0o.mongodb.net/", {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//   })
+//   .then(() => console.log("Connected to MongoDB"))
+//   .catch((err) => console.log("Error connecting to MongoDB:", err));
+
+// // Routes
+// app.get("/", (req, res) => {
+//   res.send("Hey, welcome to the homepage!");
+// });
+
+// app.get("/create", async (req, res) => {
+//   try {
+//     const accept = async (name, username, email) => {
+//       const user = await userModel.create({
+//         name,
+//         username,
+//         email,
+//       });
+//       console.log("User created:", user);
+//       return user;
+//     };
+
+//     const user1 = await accept("harsh", "harsh12", "harsh@123");
+//     const user2 = await accept("yash", "yash12", "yash@123");
+//     const user3 = await accept("smit", "smit12", "smit@123");
+
+//     res.send("Users created successfully");
+//   } catch (err) {
+//     console.error(err);
+//     res.status(500).send(`Failed to create users: ${err.message}`);
+//   }
+// });
+// app.get("/users", async (req, res) => {
+//   try {
+//     const users = await userModel.find();
+//     console.log("Users:", users);
+//     res.send(users);
+//   } catch (err) {
+//     console.error("Error fetching users:", err);
+//     res.status(500).send("Error fetching users");
+//   }
+// });
+
+// // Start the server
+// app.listen(3000, () => {
+//   console.log("Server started on port 3000");
+// });
+////How to use?
+//1. Install the required packages using npm install
+//2. Run the server using node script.js
+//3. Open your browser and navigate to http://localhost:3000/
+//4. The server will respond with "Hey, welcome to the homepage!"
+//5. Open your browser and navigate to http://localhost:3000/create
+//6. The server will create a new user and return the user object
+//7. Open your browser and navigate to http://localhost:3000/users
+//8. The server will return a list of all users
