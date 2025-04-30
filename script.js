@@ -552,7 +552,7 @@ installation; In your terminal, type 'npm i express' or 'npm install express' .
     
 //               // to send a response.
 // });
-// app.listen(3000);                       // to start the server.
+// app.listen(3300);                       // to start the server.
 
 /*-----------------------------------------------ROUTES----------------------------------------------------------------*/
 /*What is a route?
@@ -576,7 +576,9 @@ example:http://localhost:3000/                     //this is default (/) route.
 // })
 
 // app.get('/profile',function(req,res){
-//     res.send("Profile page hain bhai")
+//     //linking index.html to it
+
+//     console.log("Profile page hain bhai")
 //   })
 // app.get('/profile/male',function(req,res){
 //     res.send("Male kaProfile page hain bhai")
@@ -605,6 +607,7 @@ We can pause the recieving request and perform some action before sending the re
 requests can be:1.get 2.post 3.put 4.delete
 */
 ////example:
+// const { Console } = require('console');
 // const express = require('express');
 // const app = express();
 
@@ -618,8 +621,13 @@ requests can be:1.get 2.post 3.put 4.delete
 //     next(); 
 // });
 
-// app.get('/', function(req, res) {                                 //home page route(working)
-//     res.send("Home page hain bhai")
+// const path = require("path");
+// app.get('/', function(req, res) {   
+//   //i have my index.html file in my home directory.i want to access it using this route
+//   //please give me the address of index.html file
+//   res.sendFile(path.join(__dirname, 'index.html'));
+//   console.log("index file hain bhai");
+  
 // });
 
 // app.get('/profile', function(req, res) {                          //profile route (working)
